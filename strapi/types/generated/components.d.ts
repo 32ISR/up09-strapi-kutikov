@@ -23,6 +23,25 @@ export interface SharedQuote extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedReview extends Struct.ComponentSchema {
+  collectionName: 'components_shared_reviews';
+  info: {
+    displayName: 'Review';
+    icon: 'envelop';
+  };
+  attributes: {
+    Rating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      >;
+    Review: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedRichText extends Struct.ComponentSchema {
   collectionName: 'components_shared_rich_texts';
   info: {
@@ -67,6 +86,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
+      'shared.review': SharedReview;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;

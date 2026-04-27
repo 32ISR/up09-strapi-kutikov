@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_reviews",
+  "info": {
+    "displayName": "Review",
+    "icon": "envelop"
+  },
+  "options": {},
+  "attributes": {
+    "Review": {
+      "type": "text"
+    },
+    "Rating": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    }
+  },
+  "config": {}
+}
